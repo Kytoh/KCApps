@@ -35,7 +35,7 @@
     </form>
 
 
-    Format: a,5;b,5;c,10
+    Format: a;5,b;5,c;10
     <form id="form2" method="POST" action="nyah.php">
         <div><textarea name="csv"></textarea></div>
         <input type="submit" value="Enviar CSV">
