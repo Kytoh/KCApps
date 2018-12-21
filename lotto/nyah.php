@@ -9,9 +9,10 @@
  */
 try {
     if ($_POST) {
+
         $c_tickets = 0;
         if (isset($_POST['csv'])){
-            $array = explode(",", str_replace(array("\r\n","\r","\n"),',',trim($_POST['csv'])));
+            $array = explode(",", str_replace('\\r\\n',',',trim($_POST['csv'])));
             foreach($array as $val){
                 $t = explode(';',$val);
                 $newArray[] = array($t[0]=>$t[1]);
@@ -40,10 +41,10 @@ try {
         echo 'Participantes Totales: '.$c_person.'<br/>';
 
         for ($counter = 0; $counter < $c_tickets; $x++) {
-            $newArray = array_values($newArray);
 
-            $current = round(rand(0, count($newArray) - 1));
-            echo $counter++ . ';' . key($newArray[$current]) . $newArray[$current][key($newArray[$current])].'<br/>';
+            $current = floor(rand(0, count($newArray)));
+            //echo $current.'</br>';
+            echo str_pad($counter++, 5, "0", STR_PAD_LEFT) . ';' . key($newArray[$current]).'<br/>';
 
             if($newArray[$current][key($newArray[$current])] > 1){
                 $newArray[$current][key($newArray[$current])]--;
