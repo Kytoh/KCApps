@@ -40,7 +40,7 @@ try {
         echo 'Total Tickes:'.$c_tickets.'<br/>';
         echo 'Participantes Totales: '.$c_person.'<br/>';
 
-        for ($counter = 0; $counter < $c_tickets; $x++) {
+        for ($counter = 0; $counter < $c_tickets; $counter++) {
 
             $current = floor(rand(0, count($newArray)));
             //echo $current.'</br>';
