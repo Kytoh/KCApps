@@ -42,14 +42,18 @@ try {
 
         for ($counter = 0; $counter < $c_tickets; $counter++) {
 
-            $current = floor(rand(0, count($newArray)));
+            $current = floor(rand(0, count($newArray) -1 ));
             //echo $current.'</br>';
-            echo str_pad($counter++, 5, "0", STR_PAD_LEFT) . ';' . key($newArray[$current]).'<br/>';
-
+            if(trim(key($newArray[$current])) == 'ab') {
+                echo str_pad($counter, 5, "0", STR_PAD_LEFT) . ';AlphaBay - Premio Desierto<br/>';
+            }else{
+                echo str_pad($counter, 5, "0", STR_PAD_LEFT) . ';' . key($newArray[$current]) . '<br/>';
+            }
             if($newArray[$current][key($newArray[$current])] > 1){
                 $newArray[$current][key($newArray[$current])]--;
             }else {
                 unset($newArray[$current]);
+                $newArray = array_values($newArray);
             }
         }
     } else {

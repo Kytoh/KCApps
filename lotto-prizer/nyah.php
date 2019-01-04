@@ -40,6 +40,7 @@ try {
             $q++;
           }
         }
+
         if($sorteo == 0){
 
           $premiosCSV = explode('#',$_POST['premios']);

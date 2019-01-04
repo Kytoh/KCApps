@@ -16,6 +16,8 @@
           </select>
         </div>
         <div>CSV Numeros: <textarea name="csv"></textarea></div>
+        En formato. (los numeros en valor de 5 0's y los premios sin limite, con #)
+        9999900000000#9999900000000
         <div>CSV Premios: <textarea name="premios"></textarea></div>
         <input type="submit" value="Enviar CSV">
     </form>
